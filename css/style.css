@@ -163,7 +163,7 @@
 	padding-right: 20px;
 	font-size: 1.2em;
 }
-@media (max-width: 770px){
+@media (max-width: 1000px){
 	#gifScroll{
 		display: none !important;
 	}	
@@ -184,6 +184,10 @@
 	}
 	.profile_citation{
 		font-size: 0.9em;
+	}
+	.container{
+		margin-right: 0;
+		margin-left: 0;
 	}
 }
 
