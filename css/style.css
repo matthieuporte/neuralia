@@ -163,6 +163,10 @@
 	padding-right: 20px;
 	font-size: 1.2em;
 }
+#logoNeuralia{
+	width: 15vw;
+	margin-left: 20vw;
+}
 @media (max-width: 1000px){
 	#gifScroll{
 		display: none !important;
@@ -187,6 +191,25 @@
 	}
 	.showTxt{
 		width: 100vw;
+		font-size: 2em;
+	}
+	.showTitre{
+		width: 100vw;
+		font-size: 2em;
+	}
+}
+@media (max-width: 700px){
+	.showTxt{
+		width: 100vw;
+		font-size: 1em;
+	}
+	#logoNeuralia{
+		width: calc(100vw - 40px);
+		margin-left: 20px;
+	}
+	.showTitre{
+		width: 100vw;
+		font-size: 1em;
 	}
 }
 
