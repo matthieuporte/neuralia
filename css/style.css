@@ -185,9 +185,7 @@
 	.profile_citation{
 		font-size: 0.9em;
 	}
-	.container{
-		margin-right: 0;
-		margin-left: 0;
+	.showTxt{
 		width: 100vw;
 	}
 }
