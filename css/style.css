@@ -4,6 +4,20 @@
 #background_accueil{
 	width: 100vw;
 	height: 100vh;
+    background:-webkit-gradient(
+            linear, 
+            left top, left bottom, 
+            from(rgba(0, 100, 255, 0.3)), 
+            to(rgba(0, 0, 10, 0.3))
+          ),url('../images/bg-neuralia.jpg');
+    background:-webkit-linear-gradient(
+            rgba(0, 100, 255, 0.3), 
+            rgba(0, 0, 10, 0.3)
+          ),url('../images/bg-neuralia.jpg');
+    background:-o-linear-gradient(
+            rgba(0, 100, 255, 0.3), 
+            rgba(0, 0, 10, 0.3)
+          ),url('../images/bg-neuralia.jpg');
     background:linear-gradient(
             rgba(0, 100, 255, 0.3), 
             rgba(0, 0, 10, 0.3)
@@ -17,20 +31,44 @@
 	overflow: hidden;
 }
 .animation-background {
-  animation-name: animBkg;
-  animation-duration: 0.8s;
-  animation-timing-function: ease-out;
-  animation-delay: 0s;
+  -webkit-animation-name: animBkg;
+          animation-name: animBkg;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
-@keyframes animBkg {
+@-webkit-keyframes animBkg {
   0% {
-  	transform: translateY(-50px) scale(1.2);
-  	transform-origin: top;
+  	-webkit-transform: translateY(-50px) scale(1.2);
+  	        transform: translateY(-50px) scale(1.2);
+  	-webkit-transform-origin: top;
+  	        transform-origin: top;
   	opacity:0;
   }
   100% {
-  	transform: translate(0, 0) scale(1);
-  	transform-origin: top;
+  	-webkit-transform: translate(0, 0) scale(1);
+  	        transform: translate(0, 0) scale(1);
+  	-webkit-transform-origin: top;
+  	        transform-origin: top;
+  	opacity:1;
+  }
+}
+@keyframes animBkg {
+  0% {
+  	-webkit-transform: translateY(-50px) scale(1.2);
+  	        transform: translateY(-50px) scale(1.2);
+  	-webkit-transform-origin: top;
+  	        transform-origin: top;
+  	opacity:0;
+  }
+  100% {
+  	-webkit-transform: translate(0, 0) scale(1);
+  	        transform: translate(0, 0) scale(1);
+  	-webkit-transform-origin: top;
+  	        transform-origin: top;
   	opacity:1;
   }
 }
@@ -114,31 +152,64 @@
 	color: white;
 	text-align: center;
 	padding-top: 10px;
+	background:-webkit-gradient(
+        linear,
+        left top, left bottom,
+        from(rgba(11, 186, 164, 1)),
+        color-stop(rgba(11, 186, 164, 0.9)),  
+        to(rgba(11, 186, 164, 0.4))
+      );
+	background:-webkit-linear-gradient(
+        rgba(11, 186, 164, 1),
+        rgba(11, 186, 164, 0.9),  
+        rgba(11, 186, 164, 0.4)
+      );
+	background:-o-linear-gradient(
+        rgba(11, 186, 164, 1),
+        rgba(11, 186, 164, 0.9),  
+        rgba(11, 186, 164, 0.4)
+      );
 	background:linear-gradient(
         rgba(11, 186, 164, 1),
         rgba(11, 186, 164, 0.9),  
         rgba(11, 186, 164, 0.4)
       );
 	opacity:0;
+	-webkit-transition: opacity 0.3s ease-out;
+	-o-transition: opacity 0.3s ease-out;
 	transition: opacity 0.3s ease-out;
 }
 .contenu_profile{
 	padding-top: 30%;
-	transform: translateY(-20%);
+	-webkit-transform: translateY(-20%);
+	    -ms-transform: translateY(-20%);
+	        transform: translateY(-20%);
+	-webkit-transition: -webkit-transform 0.3s ease-out;
+	transition: -webkit-transform 0.3s ease-out;
+	-o-transition: transform 0.3s ease-out;
 	transition: transform 0.3s ease-out;
+	transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 .image_profile img{
 	width: 100%;
 }
 .image_profile:hover .gradient_profile{
 	opacity: 1;
+	-webkit-transition: opacity 0.2s ease-out;
+	-o-transition: opacity 0.2s ease-out;
 	transition: opacity 0.2s ease-out;
 }
 .image_profile:hover .contenu_profile{
-	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	    -ms-transform: translateY(0);
+	        transform: translateY(0);
+	-webkit-transition: -webkit-transform 0.3s ease-out;
+	transition: -webkit-transform 0.3s ease-out;
+	-o-transition: transform 0.3s ease-out;
 	transition: transform 0.3s ease-out;
+	transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
-.profiles .col-md-4{
+.profiles .col-xl{
 	padding: 0;
 }
 .icons_profile i{
@@ -211,7 +282,8 @@
 		font-size: 3em;
 	}
 	#logoNeuralia{
-		width: calc(100vw - 40px);
-		margin-left: 20px;
+		width: calc(100vw - 500px) !important;
+		margin-left: 250px !important;
+		margin-top: 200px;
 	}
 }
