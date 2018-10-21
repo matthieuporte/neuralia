@@ -181,9 +181,10 @@
 }
 .contenu_profile{
 	padding-top: 30%;
-	-webkit-transform: translateY(-20%);
-	    -ms-transform: translateY(-20%);
-	        transform: translateY(-20%);
+	overflow-x: hidden;
+	-webkit-transform: translateY(-20%) scale(0.7);
+	    -ms-transform: translateY(-20%) scale(0.7);
+	        transform: translateY(-20%) scale(0.7);
 	-webkit-transition: -webkit-transform 0.3s ease-out;
 	transition: -webkit-transform 0.3s ease-out;
 	-o-transition: transform 0.3s ease-out;
@@ -200,16 +201,16 @@
 	transition: opacity 0.2s ease-out;
 }
 .image_profile:hover .contenu_profile{
-	-webkit-transform: translateY(0);
-	    -ms-transform: translateY(0);
-	        transform: translateY(0);
+	-webkit-transform: translateY(0) scale(1);
+	    -ms-transform: translateY(0) scale(1);
+	        transform: translateY(0) scale(1);
 	-webkit-transition: -webkit-transform 0.3s ease-out;
 	transition: -webkit-transform 0.3s ease-out;
 	-o-transition: transform 0.3s ease-out;
 	transition: transform 0.3s ease-out;
 	transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
-.profiles .col-xl{
+.profiles .col-lg{
 	padding: 0;
 }
 .icons_profile i{
@@ -250,6 +251,11 @@
 	#text_accueil h2{
 		font-size: 2em;
 	}
+	.image_profile:hover .contenu_profile{
+		-webkit-transform: translateY(0) scale(1);
+		    -ms-transform: translateY(0) scale(1);
+		        transform: translateY(0) scale(1);
+	}
 }
 @media (max-width: 1000px) and (min-width: 700px){
 	#gifScroll{
@@ -285,5 +291,29 @@
 		width: calc(100vw - 500px) !important;
 		margin-left: 250px !important;
 		margin-top: 200px;
+	}
+	.image_profile:hover .contenu_profile{
+		-webkit-transform: translateY(0) scale(1);
+		    -ms-transform: translateY(0) scale(1);
+		        transform: translateY(0) scale(1);
+	}
+}
+@media (max-width: 1000px){
+	.contenu_profile .fa-3x{
+		font-size: 5em;
+		margin-top: 20px;
+	}
+	.Class_profile{
+		font-size: 2em;
+	}
+	.Nom_profile{
+		font-size: 4em;
+	}
+	.profile_citation{
+		font-size: 2em;
+	}
+	.titre_section{
+		font-size: 4em !important;
+		padding-top: 40px; 
 	}
 }
