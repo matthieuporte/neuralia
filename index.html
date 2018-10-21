@@ -11,6 +11,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Space+Mono|Josefin+Sans" rel="stylesheet"> 
 	<!--FA-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+	<!--aos-->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 <section id="section_accueil">
@@ -18,10 +20,12 @@
 	<br>
     <img id="logoNeuralia" src="./images/logo.png" alt="Logo Neuralia" />
     <div id="text_accueil">
-    	<h2 id="showTitre">Le temps c'est de l'argent !</h2><br>
+    	<h4>Le temps c'est de l'argent !</h4>
+    	<h2 id="showTitre">
+    		Nous croyons <b>qu'automatiser vos processus</b> d'Entreprise,<br>
+        	c'est vous offrir le <b>temps</b> de vous consacrer à <b>vos clients</b>!
+       	</h2><br>
     	<div class="showTxt">
-        	<h4>Nous croyons <b>qu'automatiser vos processus</b> d'Entreprise, </h4>
-        	<h4>c'est vous offrir le <b>temps</b> de vous consacrer à <b>vos clients</b>!</h4>
         	<h5><b>Intelligence Artificielle | Deep Learning | Machine Learning</b></h5>
     	</div>
     	<div class="responsive showTxt">
@@ -43,8 +47,10 @@
 	<div class="border-green"></div>
 	<br><br>
 	<div class="container">
+	<p class="profile_citation"><i>"Soyez proche de vos clients. Si proche que vous pourrez leur dire ce dont ils ont besoin avant qu'ils s'en apercoivent!"<br>Steve Jobs</i></p>
+	<br><br>
 		<div class="row">
-			<div class="col-lg bg_solution">
+			<div class="col-lg bg_solution" data-aos="fade-down" data-aos-delay="0">
 				<p class="titre_solution">Skwy[t]ch</p>
 				<img src="./images/skwych.png" class="image_solution">
 				<p class="contenu_solution">
@@ -53,7 +59,7 @@
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 				</p>
 			</div>
-			<div class="col-lg bg_solution">
+			<div class="col-lg bg_solution" data-aos="fade-down" data-aos-delay="100">
 				<p class="titre_solution">INSTADROPPER</p>
 				<img src="./images/insta.png" class="image_solution">
 				<p class="contenu_solution">
@@ -62,7 +68,7 @@
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 				</p>
 			</div>
-			<div class="col-lg bg_solution">
+			<div class="col-lg bg_solution" data-aos="fade-down" data-aos-delay="200">
 				<p class="titre_solution">PRÉDICTIONS</p>
 				<img src="./images/eye.png" class="image_solution">
 				<p class="contenu_solution">
@@ -72,8 +78,10 @@
 				</p>
 			</div>
 		</div>
+		<button id="btn3d">Tester nos solutions&nbsp;<i class="fas fa-arrow-right" id="icon_arrow"></i></button>
 	</div>
 </section>
+<br><br><br>
 <section>
 	<h1 id="team_titre" class="monospace titre_section">Neuralia team</h1>
 	<br>
@@ -141,13 +149,18 @@
 	<br>
 	<div class="border-green"></div>
 	<br><br>
-	<div class="container">
+	<div id="canvas3d">
+		
 	</div>
 </section>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://threejs.org/build/three.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script type="text/javascript">
+	AOS.init();
+	$("#icon_arrow").hide();
 $(window).scroll(function() {
     if($(window).scrollTop() > 0) {
         $("#gifScroll").fadeOut(300);
@@ -155,6 +168,45 @@ $(window).scroll(function() {
         $("#gifScroll").fadeIn(300);
     }
 });
+
+$("#btn3d").hover(function(){
+	$("#icon_arrow").toggle();
+});
 </script>
+<script>
+	if (window.innerWidth > 1000){
+		var scene = new THREE.Scene();
+			scene.background = new THREE.Color( 0xffffff );
+			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/(window.innerHeight/1.5), 0.1, 1000 );
+
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight/1.5 );
+			$("#canvas3d").append( renderer.domElement );
+
+			var geometry = new THREE.SphereGeometry( 2, 8, 5 );
+			var material = new THREE.MeshBasicMaterial( { color: 0x395A89 } );
+			var cube = new THREE.Mesh( geometry, material );
+			var edges = new THREE.EdgesGeometry( geometry );
+			var line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0xe0e0e0 } ) );
+			scene.add( line );
+			scene.add( cube );
+
+			camera.position.z = 5;
+
+			var animate = function () {
+				requestAnimationFrame( animate );
+
+				cube.rotation.x += 0.01;
+				cube.rotation.y += 0.01;
+				line.rotation.x += 0.01;
+				line.rotation.y += 0.01;
+
+				renderer.render( scene, camera );
+			};
+
+			animate();
+	}
+			
+		</script>
 </body>
 </html>
