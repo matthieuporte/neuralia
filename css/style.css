@@ -212,6 +212,9 @@
 }
 .profiles .col-lg{
 	padding: 0;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 40px;
 }
 .icons_profile i{
 	padding-left: 10px;
@@ -238,6 +241,36 @@
 #logoNeuralia{
 	width: 15vw;
 	margin-left: 20vw;
+}
+.bg_solution{
+	background-color: #faffff;
+	border: 10px solid white;
+	margin-bottom: 60px;
+	box-sizing: border-box;
+	border-radius: 15px;
+	cursor: pointer; 
+}
+.image_solution{
+	width: calc(100% - 100px);
+	margin-left: 50px;
+	margin-top: 20px;
+}
+.titre_solution{
+	font-size: 2em;
+	position: absolute;
+	top: 0;
+	line-height: 30px;
+	transform-origin: top left;
+	transform: rotateZ(90deg);
+	border-bottom: 2px solid black;
+}
+.contenu_solution{
+	margin-top: 15px;
+	text-align: center;
+}
+.bg_solution:hover .titre_solution{
+	line-height: 0px;
+	transform: rotateZ(0deg);
 }
 @media (max-width: 700px){
 	.showTxt{
@@ -315,5 +348,12 @@
 	.titre_section{
 		font-size: 4em !important;
 		padding-top: 40px; 
+	}
+	.titre_solution{
+		font-size: 4em;
+		line-height: 60px;
+	}
+	.contenu_solution{
+		font-size: 2em;
 	}
 }
