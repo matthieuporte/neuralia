@@ -50,18 +50,18 @@
 	<p class="profile_citation"><i>"Soyez proche de vos clients. Si proche que vous pourrez leur dire ce dont ils ont besoin avant qu'ils s'en apercoivent!"<br>Steve Jobs</i></p>
 	<br><br>
 		<div class="row">
-			<div class="col-lg bg_solution" data-aos="fade-down" data-aos-delay="0">
-				<p class="titre_solution">Skwy[t]ch</p>
-				<img src="./images/skwych.png" class="image_solution">
+			<div class="col-lg bg_solution" data-aos="fade-down" data-aos-delay="100">
+				<p class="titre_solution">INSTADROPPER</p>
+				<img src="./images/insta.png" class="image_solution" id="insta">
 				<p class="contenu_solution">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 				</p>
 			</div>
-			<div class="col-lg bg_solution" data-aos="fade-down" data-aos-delay="100">
-				<p class="titre_solution">INSTADROPPER</p>
-				<img src="./images/insta.png" class="image_solution">
+			<div class="col-lg bg_solution" data-aos="fade-down" data-aos-delay="0">
+				<p class="titre_solution">Skwy[t]ch</p>
+				<img src="./images/skwych.png" class="image_solution">
 				<p class="contenu_solution">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -78,7 +78,7 @@
 				</p>
 			</div>
 		</div>
-		<button id="btn3d">Tester nos solutions&nbsp;<i class="fas fa-arrow-right" id="icon_arrow"></i></button>
+		<button id="btn3d" class="btnVert">Tester nos solutions&nbsp;<i class="fas fa-arrow-right" id="icon_arrow"></i></button>
 	</div>
 </section>
 <br><br><br>
@@ -150,7 +150,27 @@
 	<div class="border-green"></div>
 	<br><br>
 	<div id="canvas3d">
-		
+		<div class="row row_discover">
+			<div class="col-lg">
+				<div class="card_discover" data-aos="fade-right" data-aos-offset="300">
+					<h3 class="titre_discover">InstaCafe - 15 min pour parler de votre projet!</h3>
+					<img src="./images/coffe.png" class="img_discover">
+					<p class="contenu_discover">
+					Gagner du temps, automatiser ses ventes...<br><span class="souligner">Mais par où commencer ?</span><br>Vous avez des questions. Nous y répondons autour d'un café, tout simplement.</p>
+					<button class="btnVert">Reserver</button>
+				</div>
+			</div>
+			<div class="col-lg"></div>
+			<div class="col-lg">
+				<div class="card_discover" data-aos="fade-left" data-aos-offset="300">
+					<h3 class="titre_discover">Rejoins le groupe Meetup</h3>
+					<img src="./images/diamond.png" class="img_discover">
+					<p class="contenu_discover">
+					NLP,<br> Traitement des Images,<br> API de Predictions</p>
+					<button class="btnVert">Participer</button>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -174,7 +194,9 @@ $("#btn3d").hover(function(){
 });
 </script>
 <script>
-	if (window.innerWidth > 1000){
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+	} else {
 		var scene = new THREE.Scene();
 			scene.background = new THREE.Color( 0xffffff );
 			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/(window.innerHeight/1.5), 0.1, 1000 );
@@ -183,30 +205,55 @@ $("#btn3d").hover(function(){
 			renderer.setSize( window.innerWidth, window.innerHeight/1.5 );
 			$("#canvas3d").append( renderer.domElement );
 
-			var geometry = new THREE.SphereGeometry( 2, 8, 5 );
+			// var geometry = new THREE.SphereGeometry( 2, 8, 5 );
+			var verticesOfCube = [
+			    -1,-1,-1,    1,-1,-1,    1, 1,-1,    -1, 1,-1,
+			    -1,-1, 1,    1,-1, 1,    1, 1, 1,    -1, 1, 1,
+			];
+
+			var indicesOfFaces = [
+			    2,1,0,    0,3,2,
+			    0,4,7,    7,3,0,
+			    0,1,5,    5,4,0,
+			    1,2,6,    6,5,1,
+			    2,3,7,    7,6,2,
+			    4,5,6,    6,7,4
+			];
+
+			var geometry = new THREE.PolyhedronBufferGeometry( verticesOfCube, indicesOfFaces, 6, 2 );
 			var material = new THREE.MeshBasicMaterial( { color: 0x395A89 } );
 			var cube = new THREE.Mesh( geometry, material );
 			var edges = new THREE.EdgesGeometry( geometry );
 			var line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0xe0e0e0 } ) );
 			scene.add( line );
-			scene.add( cube );
+			// scene.add( cube );
 
-			camera.position.z = 5;
+			camera.position.z = 17;
 
-			var animate = function () {
-				requestAnimationFrame( animate );
+			$(document).mousemove(function(e){
+			    mouseX = e.pageX;
+			    mouseY = e.pageY;
+			});
 
-				cube.rotation.x += 0.01;
-				cube.rotation.y += 0.01;
-				line.rotation.x += 0.01;
-				line.rotation.y += 0.01;
+				var animate = function () {
+					requestAnimationFrame( animate );
 
-				renderer.render( scene, camera );
-			};
+						// cube.rotation.x += 0.01;
+						// cube.rotation.y += 0.01;
+						// line.rotation.x += 0.01;
+						// line.rotation.y += 0.01;
 
+						// cube.rotation.y = (mouseY * 0.006);
+						// cube.rotation.x = (mouseX * 0.003);
+						line.rotation.x = (mouseY * 0.006);
+						line.rotation.y = (mouseX * 0.003);
+
+					renderer.render( scene, camera );
+				};
 			animate();
 	}
 			
 		</script>
 </body>
 </html>
+

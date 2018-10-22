@@ -284,7 +284,7 @@
 	    -ms-transform: rotate(0deg);
 	        transform: rotateZ(0deg);
 }
-#btn3d{
+.btnVert{
 	background-color: #01C3A7;
 	color: white;
 	border: 0;
@@ -298,6 +298,35 @@
 #canvas3d {
 	overflow: hidden;
 	background-color: white;
+}
+.row_discover{
+	position: absolute;
+	width: 100%;
+}
+.titre_discover{
+	text-align: center;
+	font-size: 2em;
+}
+.card_discover{
+	margin: 50px 100px 0px 100px;
+	padding: 40px 20px 40px 20px;
+	background-color: #1E2A38;
+	border-radius: 20px;
+	color: white;
+}
+.img_discover{
+	width: 40%;
+	margin-left: 30%;
+	opacity: 0.5;
+}
+.contenu_discover{
+	text-align: center;
+	font-size: 1.2em;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+.souligner{
+	text-decoration: underline;
 }
 @media (max-width: 700px){
 	.showTxt{
@@ -388,11 +417,27 @@
 		margin-left: 50px;
 		margin-top: 20px;
 	}
-	#btn3d{
+	.btnVert{
 		width: 90%;
 		margin-left: 5%;
 		font-size: 3em;
 		border-radius: 10px;
 		padding: 10px 20px 10px 20px;
+	}
+
+	.titre_discover{
+		text-align: center;
+		font-size: 4em;
+	}
+	.img_discover{
+		width: 80%;
+		margin-left: 10%;
+		opacity: 0.5;
+	}
+	.contenu_discover{
+		text-align: center;
+		font-size: 2.2em;
+		padding-left: 10%;
+		padding-right: 10%;
 	}
 }
