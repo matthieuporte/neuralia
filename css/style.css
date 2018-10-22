@@ -332,6 +332,12 @@
 section{
 	margin-bottom: 50px;
 }
+input:focus{
+	outline: none;
+}
+textarea:focus{
+	outline: none;
+}
 .input_contact{
 	border: none;
 	width: 85%;
@@ -357,6 +363,20 @@ section{
 	width: calc(100% - 80px);
 	border-bottom: 1px solid black;
 	margin-left: 40px;
+}
+#googleMaps{
+	width: 100%;
+	height: 40vh;
+}
+.lienContact{
+	background-color: #33CEB8;
+	color: white;
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.scrolloff {
+  pointer-events: none;
 }
 @media (max-width: 700px){
 	.showTxt{
