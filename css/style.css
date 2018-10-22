@@ -29,6 +29,7 @@
 }
 #section_accueil{
 	overflow: hidden;
+	margin-bottom: 0;
 }
 .animation-background {
   -webkit-animation-name: animBkg;
@@ -327,6 +328,34 @@
 }
 .souligner{
 	text-decoration: underline;
+}
+section{
+	margin-bottom: 50px;
+}
+.input_contact{
+	border: none;
+	width: 85%;
+}
+.icon_contact{
+	margin-right: 10px;
+}
+.form_contact{
+	border-bottom: 1px solid black;
+	padding-bottom: 5px;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+.icon_contact_ta{
+	float: left;
+	padding-right: 20px;
+}
+#contact .col-lg{
+	padding: 0;
+}
+.ta_contact{
+	width: calc(100% - 80px);
+	border-bottom: 1px solid black;
+	margin-left: 40px;
 }
 @media (max-width: 700px){
 	.showTxt{

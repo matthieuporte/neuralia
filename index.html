@@ -16,29 +16,29 @@
 </head>
 <body>
 <section id="section_accueil">
-<div id="background_accueil" class="animation-background">
-	<br>
-    <img id="logoNeuralia" src="./images/logo.png" alt="Logo Neuralia" />
-    <div id="text_accueil">
-    	<h4>Le temps c'est de l'argent !</h4>
-    	<h2 id="showTitre">
-    		Nous croyons <b>qu'automatiser vos processus</b> d'Entreprise,<br>
-        	c'est vous offrir le <b>temps</b> de vous consacrer à <b>vos clients</b>!
-       	</h2><br>
-    	<div class="showTxt">
-        	<h5><b>Intelligence Artificielle | Deep Learning | Machine Learning</b></h5>
-    	</div>
-    	<div class="responsive showTxt">
-    		<br>
-    		<h2>Intelligence Artificielle</h2>
-    		<h2>Deep Learning</h2>
-    		<h2>Machine Learning</h2>
-    	</div>
-    </div>
-	<div id="gifScroll">
-		<img style="width:100px" src="./images/scroll.gif" alt="Scroll gif"/>
-    </div>
-</div>
+	<div id="background_accueil" class="animation-background">
+		<br>
+	    <img id="logoNeuralia" src="./images/logo.png" alt="Logo Neuralia" />
+	    <div id="text_accueil">
+	    	<h4>Le temps c'est de l'argent !</h4>
+	    	<h2 id="showTitre">
+	    		Nous croyons <b>qu'automatiser vos processus</b> d'Entreprise,<br>
+	        	c'est vous offrir le <b>temps</b> de vous consacrer à <b>vos clients</b>!
+	       	</h2><br>
+	    	<div class="showTxt">
+	        	<h5><b>Intelligence Artificielle | Deep Learning | Machine Learning</b></h5>
+	    	</div>
+	    	<div class="responsive showTxt">
+	    		<br>
+	    		<h2>Intelligence Artificielle</h2>
+	    		<h2>Deep Learning</h2>
+	    		<h2>Machine Learning</h2>
+	    	</div>
+	    </div>
+		<div id="gifScroll">
+			<img style="width:100px" src="./images/scroll.gif" alt="Scroll gif"/>
+	    </div>
+	</div>
 </section>
 <section>
 	<br><br>
@@ -173,6 +173,35 @@
 		</div>
 	</div>
 </section>
+<section>
+	<br><br>
+	<h1 id="team_titre" class="titre_section">Nous contacter</h1>
+	<br>
+	<div class="border-green"></div>
+	<br><br>
+	<div class="container">
+	<p class="profile_citation"><i>Si vous souhaitez obtenir votre accès pour le Dashboard Neuralia ou simplement prendre contact, remplissez le formulaire.</i></p>
+	<br>
+		<div class="row">
+			<div class="col-lg form_contact">
+				<i class="fas fa-user icon_contact"></i><input class="input_contact" placeholder="nom">
+			</div>
+			<div class="col-lg form_contact">
+				<i class="fas fa-envelope icon_contact"></i><input class="input_contact" placeholder="email">
+			</div>
+			<div class="col-lg form_contact">
+				<i class="fas fa-clone icon_contact"></i><input class="input_contact" placeholder="sujet">
+			</div>
+		</div>
+		<br><br>
+		<div class="ta_contact">
+		<i class="fas fa-keyboard icon_contact_ta"></i>
+			<textarea class="input_contact" placeholder="Ecrivez votre message..."></textarea>
+		</div>
+		<br><br><br>
+		<button class="btnVert">Soumettre</button>
+	</div>
+</section>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://threejs.org/build/three.js"></script>
@@ -197,6 +226,11 @@ $("#btn3d").hover(function(){
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 
 	} else {
+
+		var mouseX = 0 ;
+		var mouseY = 0 ;
+
+
 		var scene = new THREE.Scene();
 			scene.background = new THREE.Color( 0xffffff );
 			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/(window.innerHeight/1.5), 0.1, 1000 );
@@ -245,8 +279,8 @@ $("#btn3d").hover(function(){
 
 						// cube.rotation.y = (mouseY * 0.006);
 						// cube.rotation.x = (mouseX * 0.003);
-						line.rotation.x = (mouseY * 0.006);
-						line.rotation.y = (mouseX * 0.003);
+						line.rotation.x = (mouseX * 0.006);
+						line.rotation.y = (mouseY * 0.003);
 
 					renderer.render( scene, camera );
 				};
@@ -256,4 +290,3 @@ $("#btn3d").hover(function(){
 		</script>
 </body>
 </html>
-
