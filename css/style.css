@@ -311,20 +311,23 @@
 .card_discover{
 	margin: 50px 100px 0px 100px;
 	padding: 40px 20px 40px 20px;
-	background-color: #1E2A38;
+	background-color: #03153D;
 	border-radius: 20px;
 	color: white;
 }
 .img_discover{
 	width: 40%;
 	margin-left: 30%;
-	opacity: 0.5;
+	opacity: 0.7;
 }
 .contenu_discover{
 	text-align: center;
 	font-size: 1.2em;
 	padding-left: 10%;
 	padding-right: 10%;
+}
+.icons_profile .fa-3x{
+	color: white;
 }
 .souligner{
 	text-decoration: underline;
